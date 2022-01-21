@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a0e90c51-97b7-4a0e-8f18-22a6aa7be80c": {
+      "ProjectGuid": "a0e90c51-97b7-4a0e-8f18-22a6aa7be80c",
+      "DisplayName": "Connect4",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
