@@ -7,8 +7,6 @@ namespace Connect4
         static void Main(string[] args)
         {
             Game game = new Game();
-
-            game.newGame();
             do
             {
                 var inputRow = game.playerInput();

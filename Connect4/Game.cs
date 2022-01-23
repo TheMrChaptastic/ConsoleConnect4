@@ -8,13 +8,16 @@ namespace Connect4
 {
     public class Game
     {
+        public Game()
+        {
+            newGame();
+        }
         public string[,] gameboard = new string[6, 7];
         public bool gameOver { get; set; } = false;
         public int turn { get; set; } = 0;
         public int inputRow { get; set; }
         public int turnSpotX { get; set; } = 0;
         public int turnSpotY { get; set; } = 0;
-
         public void PrintGameBoard()
         {
             Console.WriteLine("Player 1 = R | Player 2 = B");
@@ -36,7 +39,6 @@ namespace Connect4
                 Console.WriteLine("Player 1(Red) Turn " + turn);
             }
         }
-
         public void newGame()
         {
             for (int i = 0; i < gameboard.GetLength(0); i++)
@@ -68,7 +70,6 @@ namespace Connect4
                 Console.WriteLine("Player 1(Red) Turn " + turn);
             }
         }
-
         public int playerInput()
         {
             Console.Write("Enter Row: ");
@@ -106,7 +107,6 @@ namespace Connect4
             }
             return returnLine;
         }
-
         public void updateGameboard(int x)
         {
             for (int i = 5; i >= 0; i--)

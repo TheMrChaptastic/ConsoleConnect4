@@ -15,7 +15,6 @@ namespace Connect4
             var count = 0;
             var x = 0;
             var y = 0;
-
             //Check Horizontal -
             for (int i = 0; i < gameboard.GetLength(0); i++)
             {
@@ -62,7 +61,6 @@ namespace Connect4
                 }
                 count = 0;
             }
-
             //Check Diagonal /\
             for (int u = 0; u < 4; u++)
             {
@@ -130,12 +128,11 @@ namespace Connect4
                 }
                 count = 0;
             }
-
+            //End line checks and check turns to see if can continue filling board
             if (game.turn >= 43)
             {
                 game.GameOver("draw");
             }
-
         }
     }
 }
