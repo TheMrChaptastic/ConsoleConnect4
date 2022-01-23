@@ -9,14 +9,15 @@ namespace Connect4
             Game game = new Game();
             do
             {
-                var inputRow = game.playerInput();
+                game.playerInput();
                 Console.Clear();
-                game.updateGameboard(inputRow);
+                game.updateGameboard(game.inputRow);
                 game.turn++;
                 game.PrintGameBoard();
                 GameRules.winChecker(game);
 
             } while (!game.gameOver);
+            Console.WriteLine("Thanks for Playing!");
         }
     }
 }

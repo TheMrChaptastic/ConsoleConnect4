@@ -70,42 +70,24 @@ namespace Connect4
                 Console.WriteLine("Player 1(Red) Turn " + turn);
             }
         }
-        public int playerInput()
+        public void playerInput()
         {
-            Console.Write("Enter Row: ");
             int returnLine = 0;
             bool isNumber = false;
-            string input = Console.ReadLine();
+            string input = "";
+            inputRow = 0;
 
-            if (input == "new game")
+            while (!isNumber)
             {
-                newGame();
-            }
-
-            try
-            {
+                Console.Write("Enter Row: ");
+                input = Console.ReadLine();
                 isNumber = Int32.TryParse(input, out returnLine);
+                if (returnLine > 7 || returnLine < 1)
+                {
+                    isNumber = false;
+                }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine("Please use a number");
-            }
-
-            if (isNumber != true)
-            {
-                return playerInput();
-            }
-
-            if (returnLine >= 1 && returnLine <= 7)
-            {
-                return returnLine - 1;
-            }
-            else
-            {
-                Console.WriteLine("Please enter number -> 1-7");
-                returnLine = playerInput();
-            }
-            return returnLine;
+            inputRow = returnLine - 1;
         }
         public void updateGameboard(int x)
         {
